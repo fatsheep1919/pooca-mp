@@ -1,0 +1,106 @@
+/* components/iconSelectDialog/index.wxss */
+.icon-select-dialog-wrap {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  z-index: 99;
+}
+.icon-select-dialog-bg {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: black;
+  opacity: 0.5;
+}
+.icon-select-dialog-content {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: auto;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 999;
+  background: white;
+}
+.icon-select-dialog-content .title {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: solid 1px gray;
+}
+.icon-select-dialog-content .title .target {
+  width: 32px;
+  height: 32px;
+  padding: 4px;
+  border-radius: 20px;
+  border: solid 1px gray;
+  margin-left: 5px;
+}
+.icon-select-dialog-content .title .target image {
+  width: 100%;
+  height: 100%;
+}
+.icon-select-dialog-content .scroll-content {
+  max-height: 230px;
+}
+.icon-select-dialog-content .items {
+  display: flex;
+  padding: 0 10px;
+}
+.icon-select-dialog-content .items .item-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0 5px 0;
+}
+.icon-select-dialog-content .items .item {
+  width: 32px;
+  height: 32px;
+  border-radius: 20px;
+  padding: 4px;
+  border: solid 1px gray;
+}
+.icon-select-dialog-content .items .pink {
+  background-color: pink;
+}
+.icon-select-dialog-content .items .yellow {
+  background-color: yellow;
+}
+.icon-select-dialog-content .items .orange {
+  background-color: orange;
+}
+
+
+.icon-select-dialog-content .buttons {
+  display: flex;
+  justify-content: center;
+  padding: 15px 40px 5px 40px;
+}
+.icon-select-dialog-content .buttons button {
+  width: 80px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  border: solid 1px gray;
+  font-size: 12px;
+  color: white;
+}
+.icon-select-dialog-content .buttons button.cancel {
+  border: solid 1px gray;
+  color: gray;
+}
+.icon-select-dialog-content .buttons button.confirm {
+  border: solid 1px #0dc160;
+  color: #0dc160;
+}

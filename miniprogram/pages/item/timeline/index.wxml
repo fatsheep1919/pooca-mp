@@ -1,0 +1,42 @@
+<!--pages/item/timeline/index.wxml-->
+<view class="item-timeline-wrap">
+  <scroll-view
+    scroll-y="true"
+    class="scroll-content"
+    lower-threshold="240"
+    bindscrolltolower="loadMoreData"
+  >
+    <view wx:for="{{dataList}}" class="day-node">
+      <view class="head">
+        <view class="date">{{item.date}}</view>
+      </view>
+      <view wx:for="{{item.noteList}}"  class="card-wrap">
+        <view class="node-time">
+          <view class="node">
+            <view class="line"></view>
+          </view>
+          <view class="time">{{item.createdTime}}</view>
+        </view>
+        <view class="card">
+          <view class="card-head">
+            <view class="item-info">
+              <image
+                src="/images/{{item.itemInfo.icon.name || 'unknown'}}.png"
+                style="background-color: {{item.itemInfo.icon.color || 'unset'}}"
+              >
+              </image>
+              <text>{{item.itemInfo.name}}</text>
+            </view>
+          </view>
+          <view wx:if="{{item.text}}" class="card-content">
+            <text>{{item.text}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="rear">
+      <text wx:if="{{loading}}">加载中...</text>
+    </view>
+  </scroll-view>
+</view>

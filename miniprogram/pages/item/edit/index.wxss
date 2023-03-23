@@ -1,0 +1,65 @@
+/* pages/item/create/index.wxss */
+.create-item-wrap {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+}
+.create-item-wrap .line {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 0 20px 40px;
+  box-sizing: border-box;
+}
+.create-item-wrap .title {
+  font-size: 18px;
+}
+.create-item-wrap .line .value {
+  margin-left: 5px;
+}
+.create-item-wrap .value input {
+  font-size:  16px;
+  padding: 3px;
+  border-bottom: solid 1px #aaa;
+}
+.create-item-wrap .value .icon {
+  width: 32px;
+  height: 32px;
+  padding: 4px;
+  border-radius: 20px;
+  border: solid 1px #aaa;
+  display: block;
+}
+.create-item-wrap .value checkbox,
+.create-item-wrap .value radio {
+  margin-right: 24px;
+}
+.create-item-wrap .value radio image {
+  width: 36px;
+  height: 36px;
+}
+.create-item-wrap .value radio .desc {
+  font-size: 12px;
+  line-height: 8px;
+  text-align: center;
+}
+.create-item-wrap .buttons {
+  margin: 20px;
+  display: flex;
+  gap: 10px;
+}
+.create-item-wrap .buttons button.create {
+  border: solid 1px #0dc160;
+  color: #0dc160;
+}
+.create-item-wrap .buttons button.confirm {
+  border: solid 1px #0dc160;
+  color: #0dc160;
+}
+.create-item-wrap .buttons button.cancel {
+  border: solid 1px gray;
+  color: gray;
+}

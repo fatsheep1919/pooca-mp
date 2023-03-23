@@ -1,0 +1,92 @@
+/* pages/item/timeline/index.wxss */
+.item-timeline-wrap {
+  width: 100%;
+}
+.item-timeline-wrap .head .switch {
+  height: 16px;
+  padding: 10px 5px 0 0;
+  text-align: right;
+  font-size: 12px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 999;
+  background: gray;
+}
+.item-timeline-wrap .scroll-content {
+  height: 100vh;
+}
+.item-timeline-wrap .rear {
+  height: 24px;
+  padding: 0 0 10px 10px;
+}
+.item-timeline-wrap .day-node {
+  width: 100%;
+}
+.item-timeline-wrap .day-node .head {
+  height: 24px;
+  padding: 10px 20px;
+  background:  gray;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+.item-timeline-wrap .day-node .card-wrap:last-child {
+  padding-bottom: 20px;
+}
+.item-timeline-wrap .day-node .card-wrap .node-time {
+  display: flex;
+  align-items: center;
+  padding: 15px 24px 4px 26px;
+  font-size: 12px;
+}
+.item-timeline-wrap .day-node .card-wrap .node-time .node {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  margin-right: 10px;
+  background: gray;
+  position: relative;
+}
+.item-timeline-wrap .day-node .node-time .node .line {
+  position: absolute;
+  width: 1px;
+  height: 40px;
+  border-left: solid 2px gray;
+  top: -22px;
+  left: calc(50% - 1px);
+}
+.item-timeline-wrap .day-node .card {
+  width: calc(100% - 20px);
+  border-radius: 10px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  border: solid  1px gray;
+  overflow: hidden;
+}
+.item-timeline-wrap .day-node .card .card-head {
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.item-timeline-wrap .day-node .card .card-head .item-info {
+  display: flex;
+  align-items: center;
+}
+.item-timeline-wrap .day-node .card-head .item-info image {
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  margin-right: 5px;
+  background: gray;
+}
+.item-timeline-wrap .day-node .card .card-head .item-info text {
+  font-size: 12px;
+}
+.item-timeline-wrap .day-node .card .card-content {
+  border-top: solid  1px gray;
+  padding: 5px 10px;
+  font-size: 14px;
+}

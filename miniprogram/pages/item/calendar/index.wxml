@@ -1,0 +1,58 @@
+<!--pages/item/calendar/index.wxml-->
+<view class="item-calendar-wrap">
+  <view class="calendar">
+    <view class="header">
+      <view class="month" wx:if="{{year > 0}}">
+        {{year}}年 {{month+1}}月
+      </view>
+    </view>
+    <view class="container">
+      <view class="head" wx:for="{{calendarHead}}">
+        {{item}}
+      </view>
+      <view
+        wx:for="{{calendarItems}}"
+        wx:key="day"
+        class="item {{item.noteList.length > 0 ? 'active' : ''}} {{selected && item.day === selected.day ? 'selected' : ''}}"
+        data-day="{{item.day}}"
+        bindtap="showDetail"
+      >
+        <view wx:if="{{item.day}}">
+          <image
+            wx:if="{{item.noteList.length > 0}}"
+            src="/images/{{item.noteList[0].itemInfo.icon.name}}.png"
+            style="background-color: {{item.noteList[0].itemInfo.icon.color}}"
+          >
+          </image>
+          <image
+            wx:elif="{{item.past}}"
+            src="/images/cross.png"
+          >
+          </image>
+          <view wx:else class="placeholder"></view>
+          <view class="day">{{item.day}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="buttons">
+      <view class="prev-month" bindtap="loadPrevMonthData">
+      上个月
+      </view>
+      <view wx:if="{{loading}}">loading...</view>
+      <view class="next-month" bindtap="loadNextMonthData">
+      下个月
+      </view>
+    </view>
+  </view>
+  <scroll-view scroll-y="true" class="scroll-content">
+    <view
+      wx:for="{{selected.noteList}}"
+      class="note"
+    >
+      <view class="time">{{item.time}}</view>
+      <view class="content">
+        {{item.text || (item.itemInfo.name + ' 快速打卡')}}
+      </view>
+    </view>
+  </scroll-view>
+</view>

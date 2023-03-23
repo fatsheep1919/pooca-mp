@@ -1,0 +1,12 @@
+/* pages/note/entryGrid/index.wxss */
+.entryGrid-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.entryGrid-scroll-content {
+  width: 100%;
+  height: 100%;
+}

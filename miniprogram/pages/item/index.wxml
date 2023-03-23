@@ -1,0 +1,41 @@
+<!--pages/item/index.wxml-->
+<view class="item-wrap">
+  <view class="slideview-wrap">
+    <mp-slideview
+      icon="{{true}}"
+      wx:for="{{itemList}}"
+      buttons="{{item.buttons}}"
+      bindbuttontap="onSlideButtonTap"
+      bindshow="onSlideButtonShow"
+      bindhide="onSlideButtonHide"
+    >
+      <view
+        class="slideview"
+        data-item="{{item}}"
+        bindtap="onItemTap"
+      >
+        <view class="item-info">
+          <image
+            src="/images/{{item.icon.name || 'unknown'}}.png"
+            style="background-color: {{item.icon.color || 'unset'}}"
+          ></image>
+          <view>
+            {{item.name}}
+            <view wx:if="{{item.closed}}" class="mark">已结束</view>
+            <view wx:else class="createdDate">{{item.createdDate}}</view>
+          </view>
+        </view>
+        <view class="graph">
+          <view class="icon">
+            <image src="/images/{{item.view}}.png"></image>
+          </view>
+        </view>
+      </view>
+    </mp-slideview>
+
+    <view class="slideview new" bindtap="createItem">
+      <image src="/images/plus.png"></image>
+      新建事项
+    </view>
+  </view>
+</view>

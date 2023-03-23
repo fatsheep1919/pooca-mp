@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "新建事项",
+  "usingComponents": {
+    "icon-select-dialog": "/components/iconSelectDialog/index"
+  }
+}

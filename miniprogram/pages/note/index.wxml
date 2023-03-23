@@ -1,0 +1,29 @@
+<!--pages/note/index.wxml-->
+<view class="note-wrap">
+  <entry-grid totalCount="{{entryList.length}}">
+    <view class="container" wx:for="{{entryList}}">
+      <view
+        class="entry"
+        wx:for="{{entryList[index]}}"
+        bindtap="editNote"
+        data-index="{{item.rawIndex}}"
+      >
+        <image
+          wx:if="{{item.icon}}"
+          src="/images/{{item.icon.name || 'unknown'}}.png"
+          style="background-color: {{item.icon.color || 'unset'}}"
+        >
+        </image>
+        <text wx:if="{{item.name}}">{{item.name}}</text>
+      </view>
+    </view>
+  </entry-grid>
+
+  <note-edit-dialog
+    visible="{{showEditDialog}}"
+    note="{{curNote}}"
+    bindclose="closeDialog"
+    bindsave="jumpToToday"
+  >
+  </note-edit-dialog>
+</view>

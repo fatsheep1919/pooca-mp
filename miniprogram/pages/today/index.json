@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "今天",
+  "usingComponents": {
+    "mp-slideview": "weui-miniprogram/slideview/slideview",
+    "note-edit-dialog": "/components/noteEditDialog/index"
+  }
+}

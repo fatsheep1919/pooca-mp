@@ -1,0 +1,123 @@
+/* pages/today/index.wxss */
+.today-wrap {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.today-wrap .head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0px 20px 0 20px;
+  /* background: red; */
+}
+.today-wrap .head .year {
+  font-size: 18px;
+}
+.today-wrap .head .date {
+  font-size: 18px;
+}
+.today-wrap .head .node {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background: gray;
+  margin-right: 10px;
+  position: relative;
+}
+.today-wrap .head .node .line {
+  position: absolute;
+  width: 1px;
+  height: 36px;
+  border-left: solid 2px gray;
+  top: 50%;
+  left: calc(50% - 1px);
+}
+.today-wrap .content {
+  width: 100%;
+  padding-bottom: 20px;
+}
+.today-wrap .content .placehoder {
+  padding: 30px 20px;
+}
+.today-wrap .content .card-wrap .node-time {
+  display: flex;
+  align-items: center;
+  padding: 15px 24px 4px 26px;
+  font-size: 12px;
+}
+.today-wrap .content .card-wrap .node-time .node {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  margin-right: 10px;
+  background: gray;
+  position: relative;
+}
+.today-wrap .content .card-wrap .node-time .node .line {
+  position: absolute;
+  width: 1px;
+  height: 50px;
+  border-left: solid 2px gray;
+  top: -32px;
+  left: calc(50% - 1px);
+}
+.today-wrap .content .card-wrap .card {
+  width: calc(100% - 30px);
+  border-radius: 10px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  border: solid  1px gray;
+  overflow: hidden;
+}
+.today-wrap .content .card .card-head {
+  border-bottom: solid  1px gray;
+  padding: 4px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.today-wrap .content .card .card-head .item-info {
+  display: flex;
+  align-items: center;
+}
+.today-wrap .content .card .card-head .item-info image {
+  width: 20px;
+  height: 20px;
+  padding: 4px;
+  border-radius: 12px;
+  margin-right: 5px;
+  background: gray;
+}
+.today-wrap .content .card .card-head .item-info text {
+  font-size: 12px;
+}
+.today-wrap .content .card .card-head .edit {
+  width: 16px;
+  height: 16px;
+}
+.today-wrap .content .card .card-content {
+  padding: 5px 10px;
+  font-size: 14px;
+}
+.today-wrap .content .card .bottom-bar {
+  height: 24px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 16px 10px 0;
+}
+.today-wrap .content .card .bottom-bar .icon {
+  width: 24px;
+  height: 24px;
+  margin-left: 15px;
+}
+.today-wrap .weui-slideview_icon .weui-slideview__btn__wrp.today-item-icon {
+  padding-left: 0
+}
+
+.today-wrap .weui-slideview_icon .weui-slideview__btn__wrp.today-item-icon .weui-slideview__btn {
+  margin-top: 40px;
+}

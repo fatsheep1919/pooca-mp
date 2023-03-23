@@ -1,0 +1,1 @@
+"/Applications/wechatwebdevtools.app/Contents/MacOS/cli" cloud functions deploy --e cloud1-3ghj5ubafb79adea --n quickstartFunctions --r --project "/Users/xuwenyang/Documents/weixin/pooca" --report_first --report

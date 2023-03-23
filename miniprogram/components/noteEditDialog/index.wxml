@@ -1,0 +1,38 @@
+<!--components/noteEditDialog/index.wxml-->
+<view
+  wx:if="{{visible}}"
+  id="note-edit-dialog"
+  class="note-edit-dialog-wrap"
+  catchtouchmove="true"
+>
+  <view class="note-edit-dialog-bg"></view>
+  <view
+    class="note-edit-dialog-content"
+    style="margin-top: {{marginTop}};"
+  >
+    <view class="item-info">
+      <image
+        src="/images/{{note.itemInfo.icon.name || 'unknown'}}.png"
+        style="background-color: {{note.itemInfo.icon.color || 'unset'}}"
+      ></image>
+      <view>
+        {{note.itemInfo.name}}
+      </view>
+    </view>
+    <view class="edit-section">
+      <textarea
+        class="text-input"
+        maxlength="200"
+        bindkeyboardheightchange="updateDialogPosition"
+        placeholder="写点什么~"
+        value="{{note.text}}"
+        bindinput="updateText"
+      >
+      </textarea>
+    </view>
+    <view class="buttons">
+      <button class="cancel" bindtap="onClose">取消</button>
+      <button class="confirm" bindtap="onSave">保存</button>
+    </view>
+  </view>
+</view>

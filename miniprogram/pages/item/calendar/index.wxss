@@ -1,0 +1,105 @@
+/* pages/item/calendar/index.wxss */
+.item-calendar-wrap {
+  width: 100%;
+  height: 100vh;
+}
+.item-calendar-wrap .calendar .header {
+  height: 24px;
+  padding: 10px;
+  background: gray;
+}
+.item-calendar-wrap .calendar .header .month {
+  text-align: center;
+  line-height: 26px;
+  font-size: 20px;
+}
+.item-calendar-wrap .calendar .container {
+  padding: 5px 15px;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto;
+}
+.item-calendar-wrap .calendar .container .head {
+  margin: 1px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+.item-calendar-wrap .calendar .item {
+  margin: 1px;
+  width: 36px;
+  height: 32px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2px;
+  border: solid 1px gray;
+}
+.item-calendar-wrap .calendar .item image {
+  width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  display: block;
+}
+.item-calendar-wrap .calendar .item .placeholder {
+  height: 18px;
+}
+.item-calendar-wrap .calendar .item .day {
+  line-height: 10px;
+  font-size: 10px;
+  text-align: center;
+  margin-top: 2px;
+}
+.item-calendar-wrap .calendar .item.active {
+  color: red;
+  border-color: orange;
+}
+.item-calendar-wrap .calendar .item.selected {
+  background-color: orange;
+}
+.item-calendar-wrap .calendar .item.active image {
+  border: solid 1px gray;
+}
+.item-calendar-wrap .buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 20px;
+}
+.item-calendar-wrap .scroll-content {
+  width: 100%;
+  /* height: calc(100vh - 335px); */
+  border-top: solid 1px gray;
+  padding-bottom: 10px;
+}
+.item-calendar-wrap .scroll-content .note {
+  width: 100%;
+  display: flex;
+  align-items:flex-start;
+  padding: 0 10px;
+  font-size: 14px;
+}
+.item-calendar-wrap .scroll-content .note .time {
+  width: 70px;
+  box-sizing: border-box;
+  padding: 10px;
+  position: relative;
+}
+.item-calendar-wrap .scroll-content .note .time:after {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  position: absolute;
+  right: -5px;
+  bottom: calc(50% - 4px);
+  background: gray;
+}
+.item-calendar-wrap .scroll-content .note .content {
+  width: calc(100vw - 70px);
+  border-left: solid 2px gray;
+  padding: 10px 15px;
+}

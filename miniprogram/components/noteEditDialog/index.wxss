@@ -1,0 +1,85 @@
+/* components/noteEditDialog/index.wxss */
+.note-edit-dialog-wrap {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  z-index: 99;
+}
+.note-edit-dialog-bg {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: black;
+  opacity: 0.5;
+}
+.note-edit-dialog-content {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: auto;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 999;
+  background: white;
+}
+.note-edit-dialog-content .item-info {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  border-bottom: solid 1px gray;
+}
+.note-edit-dialog-content .item-info image {
+  width: 24px;
+  height: 24px;
+  padding: 2px;
+  border-radius: 13px;
+  margin-right: 5px;
+}
+.note-edit-dialog-content .edit-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+}
+.note-edit-dialog-content .edit-section .text-input {
+  max-width: 100%;
+  height: 100px;
+  line-height: 18px;
+  padding: 5px;
+  border: solid 1px gray;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+.note-edit-dialog-content .buttons {
+  display: flex;
+  justify-content: center;
+  padding: 5px 40px;
+}
+.note-edit-dialog-content .buttons button {
+  width: 80px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  border: solid 1px gray;
+  font-size: 12px;
+  color: white;
+}
+.note-edit-dialog-content .buttons button.cancel {
+  border: solid 1px gray;
+  color: gray;
+}
+.note-edit-dialog-content .buttons button.confirm {
+  border: solid 1px #0dc160;
+  color: #0dc160;
+}

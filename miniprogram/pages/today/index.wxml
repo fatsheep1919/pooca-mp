@@ -1,0 +1,61 @@
+<!--pages/today/index.wxml-->
+<view class="today-wrap">
+<scroll-view scroll-y="true" class="scroll">
+  <view wx:if="{{formatYear && formatDate}}" class="head">
+    <view class="node">
+      <view class="line"></view>
+    </view>
+    <view class="year">{{formatYear}}</view>
+    <view class="date">{{formatDate}}</view>
+    
+  </view>
+  <view class="content">
+    <view wx:if="{{!loading && noteList.length == 0}}" class="placehoder">
+      今天还什么都没做 ...
+    </view>
+    <mp-slideview
+      wx:for="{{noteList}}"
+      buttons="{{item.buttons}}"
+      bindbuttontap="onSlideButtonTap"
+      icon="{{true}}"
+    >
+      <view class="card-wrap">
+        <view class="node-time">
+          <view class="node">
+            <view class="line"></view>
+          </view>
+          <view class="time">{{item.createdDate}}</view>
+        </view>
+        <view class="card">
+          <view class="card-head">
+            <view class="item-info">
+              <image
+                src="/images/{{item.itemInfo.icon.name || 'unknown'}}.png"
+                style="background-color: {{item.itemInfo.icon.color || 'unset'}}"
+              ></image>
+              <text>{{item.itemInfo.name}}</text>
+            </view>
+            <image
+              src="/images/edit.png"
+              class="edit"
+              data-note="{{item}}"
+              bindtap="editNote"
+            ></image>
+          </view>
+          <view class="card-content">
+            <text>{{item.text}}</text>
+          </view>
+        </view>
+      </view>
+    </mp-slideview>
+  </view>
+</scroll-view>
+
+<note-edit-dialog
+  note="{{curNote}}"
+  visible="{{showEditDialog}}"
+  bindclose="closeDialog"
+  bindsave="updateNote"
+>
+</note-edit-dialog>
+</view>

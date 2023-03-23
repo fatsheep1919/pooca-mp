@@ -1,0 +1,11 @@
+<!--pages/note/entryGrid/index.wxml-->
+<view wx:if="{{totalCount <= 4}}" class="entryGrid-content">
+  <slot></slot>
+</view>
+<scroll-view
+  wx:else
+  scroll-y="true"
+  class="entryGrid-scroll-content"
+>
+  <slot></slot>
+</scroll-view>

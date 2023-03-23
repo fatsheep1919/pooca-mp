@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "记录",
+  "usingComponents": {
+    "entry-grid": "/components/entryGrid/index",
+    "note-edit-dialog": "/components/noteEditDialog/index"
+  }
+}

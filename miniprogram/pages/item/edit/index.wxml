@@ -1,0 +1,82 @@
+<!--pages/item/create/index.wxml-->
+<view class="create-item-wrap">
+  <view class="line">
+    <view class="title">
+      名称:
+    </view>
+    <view class="value">
+      <input
+        type="text"
+        maxlength="6"
+        placeholder="不多于6个字"
+        value="{{editParam.name}}"
+        bindinput="updateName"
+      ></input>
+    </view>
+  </view>
+  <view class="line">
+    <view class="title">
+      图标:
+    </view>
+    <view class="value">
+      <image
+        src="/images/{{editParam.icon.name || 'plus'}}.png"
+        class="icon"
+        style="background-color: {{editParam.icon.color || 'white'}}"
+        bindtap="openIconDialog"
+      >
+      </image>
+    </view>
+  </view>
+  <view class="line">
+    <view class="title">
+      总览:
+    </view>
+    <view class="value">
+      <radio-group bindchange="updateView">
+        <radio
+          value="calendar"
+          checked="{{editParam.view == 'calendar'}}"
+        >
+          <image src="/images/calendar.png"></image>
+          <view class="desc">月历</view>
+        </radio>
+        <radio
+          value="timeline"
+          checked="{{editParam.view == 'timeline'}}"
+        >
+          <image src="/images/timeline.png"></image>
+          <view class="desc">时间线</view>
+        </radio>
+      </radio-group>
+    </view>
+  </view>
+  <view wx:if="{{!!itemId}}" class="line">
+    <view class="title">
+      结束:
+    </view>
+    <view class="value">
+      <switch
+        color="#0dc160"
+        checked="{{editParam.closed}}"
+        bindchange="updateStatus"
+      ></switch>
+    </view>
+  </view>
+  <view wx:if="{{!itemId}}" class="buttons">
+    <button class="create" bindtap="createItem">创建</button>
+  </view>
+  <view wx:else class="buttons">
+    <button class="cancel" bindtap="goBack">取消</button>
+    <button class="confirm" bindtap="updateItem">保存</button>
+  </view>
+
+  <icon-select-dialog
+    icon="{{editParam.icon.name}}"
+    color="{{editParam.icon.color}}"
+    visible="{{showIconDialog}}"
+    bindclose="closeIconDialog"
+    bindsave="updateIcon"
+  >
+  </icon-select-dialog>
+</view>
