@@ -1,8 +1,8 @@
 {
   "pages": [
-    "pages/note/index",
-    "pages/today/index",
     "pages/item/index",
+    "pages/today/index",
+    "pages/note/index",
     "pages/item/edit/index",
     "pages/item/calendar/index",
     "pages/item/timeline/index"
@@ -13,9 +13,9 @@
     "list": [
       {
         "current": 0,
-        "pagePath": "pages/note/index",
-        "iconPath": "/images/note-txt.png",
-        "selectedIconPath": "/images/note-cur.png"
+        "pagePath": "pages/item/index",
+        "iconPath": "/images/item-txt.png",
+        "selectedIconPath": "/images/item-cur.png"
       },
       {
         "current": 1,
@@ -25,9 +25,9 @@
       },
       {
         "current": 2,
-        "pagePath": "pages/item/index",
-        "iconPath": "/images/item-txt.png",
-        "selectedIconPath": "/images/item-cur.png"
+        "pagePath": "pages/note/index",
+        "iconPath": "/images/note-txt.png",
+        "selectedIconPath": "/images/note-cur.png"
       }
     ]
   },
