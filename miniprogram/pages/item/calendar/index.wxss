@@ -41,7 +41,6 @@
 .item-calendar-wrap .calendar .item image {
   width: 18px;
   height: 18px;
-  border-radius: 9px;
   display: block;
 }
 .item-calendar-wrap .calendar .item .placeholder {
@@ -59,9 +58,6 @@
 }
 .item-calendar-wrap .calendar .item.selected {
   background-color: orange;
-}
-.item-calendar-wrap .calendar .item.active image {
-  border: solid 1px gray;
 }
 .item-calendar-wrap .buttons {
   display: flex;

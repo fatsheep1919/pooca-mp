@@ -11,13 +11,8 @@
     style="margin-top: {{marginTop}};"
   >
     <view class="item-info">
-      <image
-        src="/images/{{note.itemInfo.icon.name || 'unknown'}}.png"
-        style="background-color: {{note.itemInfo.icon.color || 'unset'}}"
-      ></image>
-      <view>
-        {{note.itemInfo.name}}
-      </view>
+      <item-icon size="24" icon="{{note.itemInfo.icon}}" />
+      <view>{{note.itemInfo.name}}</view>
     </view>
     <view class="edit-section">
       <textarea

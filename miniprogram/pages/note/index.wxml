@@ -8,13 +8,13 @@
         bindtap="editNote"
         data-index="{{item.rawIndex}}"
       >
-        <image
+        <item-icon
           wx:if="{{item.icon}}"
-          src="/images/{{item.icon.name || 'unknown'}}.png"
-          style="background-color: {{item.icon.color || 'unset'}}"
-        >
-        </image>
-        <text wx:if="{{item.name}}">{{item.name}}</text>
+          icon="{{item.icon}}"
+          text="{{item.name}}"
+          size="48"
+          showText
+        />
       </view>
     </view>
   </entry-grid>

@@ -15,10 +15,7 @@
         bindtap="onItemTap"
       >
         <view class="item-info">
-          <image
-            src="/images/{{item.icon.name || 'unknown'}}.png"
-            style="background-color: {{item.icon.color || 'unset'}}"
-          ></image>
+          <item-icon size="36" icon="{{item.icon}}" />
           <view>
             {{item.name}}
             <view wx:if="{{item.closed}}" class="mark">已结束</view>

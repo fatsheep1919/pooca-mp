@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "事项",
   "usingComponents": {
+    "item-icon": "/components/itemIcon/index",
     "mp-slideview": "weui-miniprogram/slideview/slideview"
   }
 }

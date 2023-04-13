@@ -9,134 +9,64 @@
   <view class="icon-select-dialog-content">
     <view class="title">
       图标
-      <view class="target" style="background-color: {{selectedColor}}">
-        <image
-          wx:if="{{selectedIcon}}"
-          src="/images/{{selectedIcon}}.png"
-        ></image>
-        <image wx:else src="/images/unknown.png"></image>
-      </view>
+      <item-icon size="32" icon="{{previewIcon}}" />
     </view>
     <scroll-view scroll-y="true" class="scroll-content">
-      <view class="items">
-        <view class="item-wrap" data-icon="gym" bindtap="updateIcon">
-          <image src="/images/gym.png" class="item" ></image>
+      <view class="section">
+        <view class="head">
+          图标
+          <radio-group bindchange="updateIconType">
+            <radio
+              value="img"
+              checked="{{iconType == 'img'}}"
+            >
+              <view>常用图标</view>
+            </radio>
+            <radio
+              value="alt"
+              checked="{{iconType == 'alt'}}"
+            >
+              <view>文本</view>
+            </radio>
+          </radio-group>
+          <input
+            type="text"
+            value="{{altInput}}"
+            bindinput="updateAlt"
+            style="display: {{iconType == 'alt' ? '' : 'none'}}"
+          />
         </view>
-        <view class="item-wrap" data-icon="diary" bindtap="updateIcon">
-          <image src="/images/diary.png" class="item" ></image>
+        <view wx:if="{{iconType === 'img'}}">
+          <view wx:for="{{icons}}" class="line">
+            <view
+              wx:for="{{icons[index]}}"
+              class="item-wrap"
+              data-icon="{{item}}"
+              bindtap="updateIcon"
+            >
+              <image
+                src="/images/{{item}}.png"
+                class="item {{item == previewIcon.name && 'cur'}}"
+              />
+            </view>
+          </view>
         </view>
-        <view class="item-wrap" data-icon="money" bindtap="updateIcon">
-          <image src="/images/money.png" class="item" ></image>
-        </view>
-        <view class="item-wrap" data-icon="poo" bindtap="updateIcon">
-          <image src="/images/poo.png" class="item" ></image>
-        </view>
-        <view class="item-wrap" data-icon="word" bindtap="updateIcon">
-          <image src="/images/word.png" class="item" ></image>
-        </view>
+        <view wx:else class="line" />
       </view>
-      <view class="items">
-        <view
-          class="item-wrap"
-          data-color="#ffc0cb"
-          bindtap="updateColor"
-        >
+      <view class="section">
+        <view class="head">颜色</view>
+        <view wx:for="{{colors}}" class="line">
           <view
-            class="item color"
-            style="background-color: #ffc0cb"
-          ></view>
-        </view>
-        <view
-          class="item-wrap"
-          data-color="#ffff00"
-          bindtap="updateColor"
-        >
-          <view
-            class="item color"
-            style="background-color: #ffff00"
-          ></view>
-        </view>
-        <view
-          class="item-wrap"
-          data-color="#ffa500"
-          bindtap="updateColor"
-        >
-          <view
-            class="item color"
-            style="background-color: #ffa500"
-          ></view>
-        </view>
-        <view
-          class="item-wrap"
-          data-color="#a2f4ff"
-          bindtap="updateColor"
-        >
-          <view
-            class="item color"
-            style="background-color: #a2f4ff"
-          ></view>
-        </view>
-        <view
-          class="item-wrap"
-          data-color="#b9b8ff"
-          bindtap="updateColor"
-        >
-          <view
-            class="item color"
-            style="background-color: #b9b8ff"
-          ></view>
-        </view>
-      </view>
-      <view class="items">
-        <view
-          class="item-wrap"
-          data-color="#b8ffcf"
-          bindtap="updateColor"
-        >
-          <view
-            class="item color"
-            style="background-color: #b8ffcf"
-          ></view>
-        </view>
-        <view
-          class="item-wrap"
-          data-color="#ffdcb8"
-          bindtap="updateColor"
-        >
-          <view
-            class="item color"
-            style="background-color: #ffdcb8"
-          ></view>
-        </view>
-        <view
-          class="item-wrap"
-          data-color="#b8d4ff"
-          bindtap="updateColor"
-        >
-          <view
-            class="item color"
-            style="background-color: #b8d4ff"
-          ></view>
-        </view>
-        <view
-          class="item-wrap"
-          data-color="#eeb8ff"
-          bindtap="updateColor"
-        >
-          <view
-            class="item color"
-            style="background-color: #eeb8ff"
-          ></view>
-        </view>
-        <view
-          class="item-wrap"
-          data-color="#fbffb8"
-          bindtap="updateColor"
-        >
-          <view
-            class="item color"
-            style="background-color: #fbffb8"
-          ></view>
+            wx:for="{{colors[index]}}"
+            class="item-wrap"
+            data-color="{{item}}"
+            bindtap="updateColor"
+          >
+            <view
+              class="item color {{item == previewIcon.color && 'cur'}}"
+              style="background-color: {{item}}"
+            />
+          </view>
         </view>
       </view>
     </scroll-view>

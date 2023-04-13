@@ -18,12 +18,11 @@
         bindtap="showDetail"
       >
         <view wx:if="{{item.day}}">
-          <image
+          <item-icon
             wx:if="{{item.noteList.length > 0}}"
-            src="/images/{{item.noteList[0].itemInfo.icon.name}}.png"
-            style="background-color: {{item.noteList[0].itemInfo.icon.color}}"
-          >
-          </image>
+            icon="{{item.noteList[0].itemInfo.icon}}"
+            size="18"
+          />
           <image
             wx:elif="{{item.past}}"
             src="/images/cross.png"

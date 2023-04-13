@@ -2,6 +2,7 @@
   "navigationBarTitleText": "今天",
   "usingComponents": {
     "mp-slideview": "weui-miniprogram/slideview/slideview",
+    "item-icon": "/components/itemIcon/index",
     "note-edit-dialog": "/components/noteEditDialog/index"
   }
 }

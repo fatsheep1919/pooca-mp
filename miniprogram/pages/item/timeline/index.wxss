@@ -74,15 +74,7 @@
 .item-timeline-wrap .day-node .card .card-head .item-info {
   display: flex;
   align-items: center;
-}
-.item-timeline-wrap .day-node .card-head .item-info image {
-  width: 24px;
-  height: 24px;
-  border-radius: 12px;
-  margin-right: 5px;
-  background: gray;
-}
-.item-timeline-wrap .day-node .card .card-head .item-info text {
+  gap: 5px;
   font-size: 12px;
 }
 .item-timeline-wrap .day-node .card .card-content {

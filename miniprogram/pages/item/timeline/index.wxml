@@ -20,11 +20,7 @@
         <view class="card">
           <view class="card-head">
             <view class="item-info">
-              <image
-                src="/images/{{item.itemInfo.icon.name || 'unknown'}}.png"
-                style="background-color: {{item.itemInfo.icon.color || 'unset'}}"
-              >
-              </image>
+              <item-icon size="24" icon="{{item.itemInfo.icon}}" />
               <text>{{item.itemInfo.name}}</text>
             </view>
           </view>

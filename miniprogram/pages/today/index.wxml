@@ -10,44 +10,46 @@
     
   </view>
   <view class="content">
-    <view wx:if="{{!loading && noteList.length == 0}}" class="placehoder">
-      今天还什么都没做 ...
-    </view>
-    <mp-slideview
-      wx:for="{{noteList}}"
-      buttons="{{item.buttons}}"
-      bindbuttontap="onSlideButtonTap"
-      icon="{{true}}"
-    >
-      <view class="card-wrap">
-        <view class="node-time">
-          <view class="node">
-            <view class="line"></view>
-          </view>
-          <view class="time">{{item.createdDate}}</view>
-        </view>
-        <view class="card">
-          <view class="card-head">
-            <view class="item-info">
-              <image
-                src="/images/{{item.itemInfo.icon.name || 'unknown'}}.png"
-                style="background-color: {{item.itemInfo.icon.color || 'unset'}}"
-              ></image>
-              <text>{{item.itemInfo.name}}</text>
-            </view>
-            <image
-              src="/images/edit.png"
-              class="edit"
-              data-note="{{item}}"
-              bindtap="editNote"
-            ></image>
-          </view>
-          <view class="card-content">
-            <text>{{item.text}}</text>
-          </view>
-        </view>
+    <view wx:if="{{loaded}}">
+      <view wx:if="{{noteList.length == 0}}" class="placehoder">
+        今天还什么都没做 ...
+        <text class="pos1">什么都没做 ...</text>
+        <text class="pos2">什么都没 ...</text>
+        <text class="pos3">做 ...</text>
       </view>
-    </mp-slideview>
+      <mp-slideview
+        wx:for="{{noteList}}"
+        buttons="{{item.buttons}}"
+        bindbuttontap="onSlideButtonTap"
+        icon="{{true}}"
+      >
+        <view class="card-wrap">
+          <view class="node-time">
+            <view class="node">
+              <view class="line"></view>
+            </view>
+            <view class="time">{{item.createdDate}}</view>
+          </view>
+          <view class="card">
+            <view class="card-head">
+              <view class="item-info">
+                <item-icon size="20" icon="{{item.itemInfo.icon}}" />
+                <text>{{item.itemInfo.name}}</text>
+              </view>
+              <image
+                src="/images/edit.png"
+                class="edit"
+                data-note="{{item}}"
+                bindtap="editNote"
+              ></image>
+            </view>
+            <view class="card-content">
+              <text>{{item.text}}</text>
+            </view>
+          </view>
+        </view>
+      </mp-slideview>
+    </view>
   </view>
 </scroll-view>
 

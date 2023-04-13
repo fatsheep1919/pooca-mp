@@ -1,0 +1,12 @@
+<!--components/itemIcon/index.wxml-->
+<view class="item-icon">
+  <view
+    class="image-wrap"
+    style="width: {{size}}px; height: {{size}}px; background-color: {{color || 'unset'}}"
+  >
+    <image wx:if="{{name}}" src="/images/{{name}}.png"></image>
+    <text wx:elif="{{alt}}" class="alt">{{alt}}</text>
+    <image wx:else src="/images/unknown.png"></image>
+  </view>
+  <text wx:if="{{showText}}">{{text}}</text>
+</view>

@@ -21,7 +21,7 @@ Page({
     curNote: null,
     showEditDialog: false,
 
-    loading: false,
+    loaded: false,
   },
 
   getTimeRange(date) {
@@ -63,7 +63,6 @@ Page({
   loadNotes(date) {
     const self = this;
     const [startTime, endTime] = self.getTimeRange(date);
-    self.setData({ loading: true });
 
     const _ = db.command;
     db.collection('note').where({
@@ -81,7 +80,7 @@ Page({
               data: it._id
             }))
           })),
-          loading: false
+          loaded: true
         })
       }
     });
@@ -184,7 +183,7 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide() {
-
+    this.setData({ loaded: false });
   },
 
   /**

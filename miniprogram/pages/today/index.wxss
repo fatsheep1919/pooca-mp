@@ -29,7 +29,7 @@
 .today-wrap .head .node .line {
   position: absolute;
   width: 1px;
-  height: 36px;
+  height: 15px;
   border-left: solid 2px gray;
   top: 50%;
   left: calc(50% - 1px);
@@ -39,7 +39,33 @@
   padding-bottom: 20px;
 }
 .today-wrap .content .placehoder {
-  padding: 30px 20px;
+  padding: 15px 25px;
+  height: 360px;
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.today-wrap .content .placehoder .pos1 {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  transform: rotateZ(-15deg);
+  animation: fadeIn 2s;
+}
+.today-wrap .content .placehoder .pos2 {
+  position: absolute;
+  top: 200px;
+  left: 160px;
+  transform: rotateZ(15deg);
+  animation: fadeIn 4s;
+}
+.today-wrap .content .placehoder .pos3 {
+  position: absolute;
+  top: 320px;
+  left: 220px;
+  transform: rotateZ(65deg);
+  animation: fadeIn 6s;
 }
 .today-wrap .content .card-wrap .node-time {
   display: flex;
@@ -82,17 +108,8 @@
 .today-wrap .content .card .card-head .item-info {
   display: flex;
   align-items: center;
-}
-.today-wrap .content .card .card-head .item-info image {
-  width: 20px;
-  height: 20px;
-  padding: 4px;
-  border-radius: 12px;
-  margin-right: 5px;
-  background: gray;
-}
-.today-wrap .content .card .card-head .item-info text {
   font-size: 12px;
+  gap: 5px;
 }
 .today-wrap .content .card .card-head .edit {
   width: 16px;
@@ -101,6 +118,7 @@
 .today-wrap .content .card .card-content {
   padding: 5px 10px;
   font-size: 14px;
+  min-height: 12px;
 }
 .today-wrap .content .card .bottom-bar {
   height: 24px;

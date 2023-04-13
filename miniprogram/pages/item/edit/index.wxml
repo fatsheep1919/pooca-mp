@@ -20,12 +20,17 @@
     </view>
     <view class="value">
       <image
-        src="/images/{{editParam.icon.name || 'plus'}}.png"
+        wx:if="{{!editParam.icon.name && !editParam.icon.alt}}"
+        src="/images/plus.png"
         class="icon"
-        style="background-color: {{editParam.icon.color || 'white'}}"
         bindtap="openIconDialog"
-      >
-      </image>
+      />
+      <item-icon
+        wx:else
+        size="32"
+        icon="{{editParam.icon}}"
+        bindtap="openIconDialog"
+      />
     </view>
   </view>
   <view class="line">

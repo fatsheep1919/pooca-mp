@@ -13,6 +13,7 @@ Page({
       icon: {
         name: '',
         color: '',
+        alt: '',
       },
       view: '', // calendar | timeline
       closed: false,
@@ -41,13 +42,14 @@ Page({
   },
 
   updateIcon(e) {
-    const { icon, color } = e.detail;
+    const { name, color, alt } = e.detail;
     this.setData({
       editParam: {
         ...this.data.editParam,
         icon: {
-          name: icon,
-          color
+          name,
+          color,
+          alt,
         }
       },
       showIconDialog: false
