@@ -6,33 +6,38 @@
     lower-threshold="240"
     bindscrolltolower="loadMoreData"
   >
-    <view wx:for="{{dataList}}" class="day-node">
-      <view class="head">
-        <view class="date">{{item.date}}</view>
-      </view>
-      <view wx:for="{{item.noteList}}"  class="card-wrap">
-        <view class="node-time">
-          <view class="node">
-            <view class="line"></view>
-          </view>
-          <view class="time">{{item.createdTime}}</view>
+    <view wx:if="{{!loading && dataList.length == 0}}" class='empty'>
+      <view>什么都没记呢</view>
+      <view>┐(ﾟ～ﾟ)┌</view>
+    </view>
+    <view wx:else>
+      <view wx:for="{{dataList}}" class="day-node">
+        <view class="head">
+          <view class="date">{{item.date}}</view>
         </view>
-        <view class="card">
-          <view class="card-head">
-            <view class="item-info">
-              <item-icon size="24" icon="{{item.itemInfo.icon}}" />
-              <text>{{item.itemInfo.name}}</text>
+        <view wx:for="{{item.noteList}}"  class="card-wrap">
+          <view class="node-time">
+            <view class="node">
+              <view class="line"></view>
+            </view>
+            <view class="time">{{item.createdTime}}</view>
+          </view>
+          <view class="card">
+            <view class="card-head">
+              <view class="item-info">
+                <item-icon size="24" icon="{{item.itemInfo.icon}}" />
+                <text>{{item.itemInfo.name}}</text>
+              </view>
+            </view>
+            <view wx:if="{{item.text}}" class="card-content">
+              <text>{{item.text}}</text>
             </view>
           </view>
-          <view wx:if="{{item.text}}" class="card-content">
-            <text>{{item.text}}</text>
-          </view>
         </view>
       </view>
-    </view>
-
-    <view class="rear">
-      <text wx:if="{{loading}}">加载中...</text>
+      <view class="rear">
+        <text wx:if="{{loading}}">加载中...</text>
+      </view>
     </view>
   </scroll-view>
 </view>

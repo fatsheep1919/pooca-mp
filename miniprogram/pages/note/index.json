@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "记录",
+  "navigationBarTitleText": "打卡",
   "usingComponents": {
     "entry-grid": "/components/entryGrid/index",
     "item-icon": "/components/itemIcon/index",

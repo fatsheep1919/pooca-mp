@@ -8,36 +8,33 @@
     "pages/item/timeline/index"
   ],
   "tabBar": {
-    "selectedColor": "#009688",
-    "backgroundColor": "#f5f5f5",
+    "selectedColor": "#125488",
+    "backgroundColor": "#f6f6f6",
     "list": [
       {
         "current": 0,
         "pagePath": "pages/note/index",
-        "text": "记录",
-        "iconPath": "/images/note.png",
-        "selectedIconPath": "/images/note.png"
+        "iconPath": "/images/note-txt.png",
+        "selectedIconPath": "/images/note-cur.png"
       },
       {
         "current": 1,
         "pagePath": "pages/today/index",
-        "text": "今天",
-        "iconPath": "/images/today.png",
-        "selectedIconPath": "/images/today.png"
+        "iconPath": "/images/today-txt.png",
+        "selectedIconPath": "/images/today-cur.png"
       },
       {
         "current": 2,
         "pagePath": "pages/item/index",
-        "text": "事项",
-        "iconPath": "/images/item.png",
-        "selectedIconPath": "/images/item.png"
+        "iconPath": "/images/item-txt.png",
+        "selectedIconPath": "/images/item-cur.png"
       }
     ]
   },
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarBackgroundColor": "#e6e6e6",
     "navigationBarTextStyle": "black"
   },
   "useExtendedLib": {

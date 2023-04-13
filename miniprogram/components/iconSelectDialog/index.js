@@ -39,8 +39,8 @@ Component({
       ['gitar', 'movie', 'beer', 'coffee', 'pill'],
     ],
     colors: [
-      ['#ffc0cb', '#ffff00', '#ffa500', '#a2f4ff', '#b9b8ff'],
-      ['#b8ffcf', '#ffdcb8', '#b8d4ff', '#eeb8ff', '#fbffb8'],
+      ['#ff9b9b', '#bfffaa', '#ffffbe', '#a6ede4', '#c9cba5'],
+      ['#ffd0d9', '#ffe5b5', '#bff0ff', '#e7bb91', '#e9abe4'],
     ],
 
     iconType: 'img',

@@ -5,8 +5,8 @@
 }
 .item-calendar-wrap .calendar .header {
   height: 24px;
-  padding: 10px;
-  background: gray;
+  padding: 3px 10px;
+  background: #e6d7ca;
 }
 .item-calendar-wrap .calendar .header .month {
   text-align: center;
@@ -17,6 +17,7 @@
   padding: 5px 15px;
   display: grid;
   grid-template-columns: auto auto auto auto auto auto auto;
+  background-color: #fff9ea;
 }
 .item-calendar-wrap .calendar .container .head {
   margin: 1px;
@@ -54,20 +55,26 @@
 }
 .item-calendar-wrap .calendar .item.active {
   color: red;
-  border-color: orange;
+  border-color: #ff9100;
+  background-color: #ffda94;
 }
 .item-calendar-wrap .calendar .item.selected {
-  background-color: orange;
+  border-color: red;
+  background-color: #ffa6a6b7;
 }
 .item-calendar-wrap .buttons {
   display: flex;
   justify-content: space-between;
   padding: 5px 20px;
+  background-color: #fff9ea;
+}
+.item-calendar-wrap .buttons .prev-month,
+.item-calendar-wrap .buttons .next-month {
+  color: brown;
 }
 .item-calendar-wrap .scroll-content {
   width: 100%;
-  /* height: calc(100vh - 335px); */
-  border-top: solid 1px gray;
+  border-top: solid 1px #ffb671;
   padding-bottom: 10px;
 }
 .item-calendar-wrap .scroll-content .note {
@@ -92,10 +99,10 @@
   position: absolute;
   right: -5px;
   bottom: calc(50% - 4px);
-  background: gray;
+  background: #ffb671;
 }
 .item-calendar-wrap .scroll-content .note .content {
   width: calc(100vw - 70px);
-  border-left: solid 2px gray;
+  border-left: solid 2px #ffb671;
   padding: 10px 15px;
 }

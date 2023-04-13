@@ -34,7 +34,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: solid 1px gray;
+  border-bottom: solid 1px #ccc;
   gap: 5px;
 }
 .icon-select-dialog-content .scroll-content {

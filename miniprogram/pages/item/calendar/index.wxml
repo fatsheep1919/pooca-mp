@@ -35,11 +35,11 @@
     </view>
     <view class="buttons">
       <view class="prev-month" bindtap="loadPrevMonthData">
-      上个月
+      {{'< 上个月'}}
       </view>
       <view wx:if="{{loading}}">loading...</view>
       <view class="next-month" bindtap="loadNextMonthData">
-      下个月
+        {{'下个月 >'}}
       </view>
     </view>
   </view>
