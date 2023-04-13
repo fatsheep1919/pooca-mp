@@ -67,18 +67,19 @@ Page({
 
   loadInitialData() {
     const startTime = this.data.itemCreated;
-    const endTime = startTime + (10 * 24 * 3600000); // 10天
-    console.log('time range:', startTime, endTime)
-    this.loadData(startTime, endTime);
+    console.log('load initial:', startTime);
+    this.loadData(startTime);
   },
 
   loadMoreData() {
-    const startTime = this.data.endTime;
-    const endTime = startTime + (10 * 24 * 3600000); // 10天
-    this.loadData(startTime, endTime);
+    if (this.data.endTime > 0) {
+      const startTime = this.data.endTime + 1;
+      console.log('load more:', startTime);
+      this.loadData(startTime);
+    }
   },
 
-  loadData(startTime, endTime) {
+  loadData(startTime, limit = 20) {
     const self = this;
     if (self.data.allLoaded || self.data.loading) {
       return;
@@ -86,20 +87,24 @@ Page({
 
     self.setData({ loading: true });
     const _ = db.command;
-    db.collection('note').where({
-      itemId: _.eq(self.data.itemId),
-      created: _.gte(startTime).and(_.lt(endTime))
-    }).get({
+    db.collection('note')
+    .orderBy('created', 'asc')
+    .where({ itemId: _.eq(self.data.itemId), created: _.gte(startTime) })
+    .limit(limit)
+    .get({
       success: function(res) {
         console.log('load data:', res)
+        const total = res.data.length;
+        const lastItem = total > 0 ? res.data[total - 1] : null;
+
         const newDataList = self.formatDataList(res.data);
         self.setData({
           startTime,
-          endTime,
+          endTime: lastItem ? lastItem.created : -1,
           dataList: self.data.dataList.length > 0 ? [...self.data.dataList, ...newDataList] : newDataList,
           loading: false,
-          allLoaded: res.data.length == 0,
-        })
+          allLoaded: total == 0,
+        });
       },
       fail: function(error) {
         console.log('load data error:', error)
