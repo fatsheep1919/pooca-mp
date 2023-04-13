@@ -9,23 +9,15 @@ Component({
       value: false
     },
     icon: {
-      type: String,
+      type: Object,
       observer: function(val) {
-        const { previewIcon } = this.data;
-        previewIcon.name = val;
-        this.setData({
-          previewIcon
-        });
-      }
-    },
-    color: {
-      type: String,
-      observer: function(val) {
-        const { previewIcon } = this.data;
-        previewIcon.color = val;
-        this.setData({
-          previewIcon
-        });
+        if (val) {
+          this.setData({
+            previewIcon: val,
+            iconType: !val.name && val.alt ? 'alt' : 'img',
+            altInput: val.alt || '',
+          });
+        }
       }
     },
   },

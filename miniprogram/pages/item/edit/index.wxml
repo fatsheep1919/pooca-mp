@@ -77,8 +77,7 @@
   </view>
 
   <icon-select-dialog
-    icon="{{editParam.icon.name}}"
-    color="{{editParam.icon.color}}"
+    icon="{{editParam.icon}}"
     visible="{{showIconDialog}}"
     bindclose="closeIconDialog"
     bindsave="updateIcon"

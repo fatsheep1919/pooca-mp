@@ -149,10 +149,7 @@ Page({
             self.setData({
               editParam: {
                 name: data.name,
-                icon: {
-                  name: data.icon?.name,
-                  color: data.icon?.color,
-                },
+                icon: data.icon,
                 view: data.view,
                 closed: data.closed,
               },

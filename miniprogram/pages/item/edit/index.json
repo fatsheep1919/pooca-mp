@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "新建事项",
+  "navigationBarTitleText": "事项",
   "usingComponents": {
     "item-icon": "/components/itemIcon/index",
     "icon-select-dialog": "/components/iconSelectDialog/index"
