@@ -68,34 +68,37 @@ Page({
   loadPrevMonthData() {
     const { year, month } = this.data;
     if (month == 0) {
-      this.loadData(year - 1, 11);
+      this.loadMonthData(year - 1, 11);
     } else {
-      this.loadData(year, month - 1);
+      this.loadMonthData(year, month - 1);
     }
   },
 
   loadNextMonthData() {
     const { year, month } = this.data;
     if (month == 11) {
-      this.loadData(year + 1, 0);
+      this.loadMonthData(year + 1, 0);
     } else {
-      this.loadData(year, month + 1);
+      this.loadMonthData(year, month + 1);
     }
   },
 
-  loadData(year, month) {
+  loadMonthData(year, month) {
     const self = this;
     const [startTime, endTime] = self.getMonthRange(year, month);
+    const step = 10 * 24 * 3600000;
 
     self.setData({ loading: true });
-    const _ = db.command;
-    db.collection('note').where({
-      itemId: _.eq(self.data.itemId),
-      created: _.gte(startTime).and(_.lt(endTime))
-    }).get({
-      success: function(res) {
-        console.log('load data:', res)
-        const newCalendarItems = self.formatCalendarData(year, month, res.data);
+    Promise.all([
+      self.loadData(startTime, startTime + step),
+      self.loadData(startTime + step, startTime + 2*step),
+      self.loadData(startTime + 2*step, endTime),
+    ])
+      .then(res => {
+        console.log('Promise all res:', res)
+        let allData = [];
+        res.forEach(it => allData = allData.concat(it.data));
+        const newCalendarItems = self.formatCalendarData(year, month, allData);
         self.setData({
           year,
           month,
@@ -104,11 +107,19 @@ Page({
           loading: false,
           selected: null,
         })
-      },
-      fail: function(error) {
-        console.log('load data error:', error)
-      },
-    });
+      })
+      .catch(console.error);
+  },
+
+  loadData(startTime, endTime) {
+    const self = this;
+    const _ = db.command;
+    return db.collection('note')
+      .where({
+        itemId: _.eq(self.data.itemId),
+        created: _.gte(startTime).and(_.lt(endTime))
+      })
+      .get();
   },
 
   showDetail(e) {
@@ -154,7 +165,7 @@ Page({
     const currentDate = new Date();
     const year = currentDate.getFullYear();
     const month = currentDate.getMonth();
-    this.loadData(year, month);
+    this.loadMonthData(year, month);
   },
 
   /**
